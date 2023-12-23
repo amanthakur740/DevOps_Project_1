@@ -1,0 +1,26 @@
+
+
+#!/bin/bash
+
+# Set the path to the working tree
+WORKING_TREE=/git
+
+# Set the branch you want to push
+BRANCH=master
+
+# Git environment variables
+export GIT_DIR=$(pwd)
+export GIT_WORK_TREE=$WORKING_TREE
+
+while read oldrev newrev ref
+do
+    # Only trigger on the desired branch
+    if [[ $ref = refs/heads/$BRANCH ]]; then
+        # Reset the working tree to the latest commit
+        git reset --hard $newrev
+
+        # Push changes to GitHub
+        git push https://github.com/amanthakur740/DevOps_Project_1.git $BRANCH
+    fi
+done
+

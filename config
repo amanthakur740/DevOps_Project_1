@@ -1,0 +1,7 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://amanthakur740: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@github.com/amanthakur740/DevOps_Project_1.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
